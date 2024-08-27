@@ -33,6 +33,8 @@ def main()-> None:
         if snake.head.distance(food) < 15:
             food.refresh()
             score_board.increase_score()
+        if snake.head.xcor() >285 or snake.head.xcor() < -285 or snake.head.ycor() > 285 or snake.head.ycor() < -285:
+            game_is_on = False
 
 
     screen.exitonclick()
