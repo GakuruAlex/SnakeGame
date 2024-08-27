@@ -13,8 +13,19 @@ class Snake:
         self.build_snake()
         self.head = self.segments[0]
     def add_segments(self, position):
+        """_Add a segment_
+
+        Args:
+            position (_tuple_): _x, y position to add segment_
+
+        Returns:
+            _list_: _a list of turtle objects_
+        """
         new_snake =Turtle(shape="square")
+        
         new_snake.color("white")
+        new_snake.shapesize(stretch_wid=0.5, stretch_len= 0.5)
+        new_snake.speed("fast")
         new_snake.penup()
         new_snake.goto(position)
         self.segments.append(new_snake)
@@ -30,6 +41,8 @@ class Snake:
         for position in STARTING_POSITIONS:
             self.add_segments(position)
     def extend_snake(self):
+        """_Add a turtle to end of snake _
+        """
         x_cor = self.segments[-1].xcor()
         y_cor  = self.segments[-1].ycor()
         self.add_segments((x_cor, y_cor))
