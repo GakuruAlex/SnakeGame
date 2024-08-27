@@ -12,7 +12,14 @@ class Snake:
         self.segments  = []
         self.build_snake()
         self.head = self.segments[0]
-
+    def add_segments(self, position):
+        new_snake =Turtle(shape="square")
+        new_snake.color("white")
+        new_snake.penup()
+        new_snake.goto(position)
+        self.segments.append(new_snake)
+        return self.segments
+    
     def build_snake(self)-> list:
         """_Build a snake with three turtles_
 
@@ -21,12 +28,8 @@ class Snake:
         """
 
         for position in STARTING_POSITIONS:
-            new_snake =Turtle(shape="square")
-            new_snake.color("white")
-            new_snake.penup()
-            new_snake.goto(position)
-            self.segments.append(new_snake)
-        return self.segments
+            self.add_segments(position)
+    
 
     def move(self):
         """_Move the snake forward_
