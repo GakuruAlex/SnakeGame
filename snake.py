@@ -29,7 +29,10 @@ class Snake:
 
         for position in STARTING_POSITIONS:
             self.add_segments(position)
-    
+    def extend_snake(self):
+        x_cor = self.segments[-1].xcor()
+        y_cor  = self.segments[-1].ycor()
+        self.add_segments((x_cor, y_cor))
 
     def move(self):
         """_Move the snake forward_
