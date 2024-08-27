@@ -1,11 +1,12 @@
 import time
 from turtle import Screen
-from snake import build_snake
+from snake import Snake
 
 
-screen = Screen()
+
 def main()-> None:
-
+    screen = Screen()
+    snake = Snake()
     game_is_on = True
     screen.setup(height = 600, width = 600)
     screen.bgcolor("black")
@@ -13,7 +14,7 @@ def main()-> None:
     screen.tracer(0)
    
 
-    segments =build_snake().copy()
+    segments =snake.build_snake()
     while game_is_on:
         screen.update()
         time.sleep(0.1)
@@ -24,7 +25,7 @@ def main()-> None:
         segments[0].forward(20)
 
 
-screen.exitonclick()
+    screen.exitonclick()
 
 
 if __name__ =="__main__":
