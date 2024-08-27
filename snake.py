@@ -22,15 +22,15 @@ class Snake:
             _list_: _a list of turtle objects_
         """
         new_snake =Turtle(shape="square")
-        
+
         new_snake.color("white")
         new_snake.shapesize(stretch_wid=0.5, stretch_len= 0.5)
-        new_snake.speed("fast")
+
         new_snake.penup()
         new_snake.goto(position)
         self.segments.append(new_snake)
         return self.segments
-    
+
     def build_snake(self)-> list:
         """_Build a snake with three turtles_
 
@@ -53,6 +53,7 @@ class Snake:
         for seg_num in range(len(self.segments) - 1, 0,-1):
             new_x  = self.segments[seg_num - 1].xcor()
             new_y = self.segments[seg_num - 1].ycor()
+
             self.segments[seg_num].goto(new_x, new_y)
         self.head.forward(MOVE_DISTANCE)
 
@@ -76,6 +77,11 @@ class Snake:
         """
         if self.head.heading() != LEFT:
             self.head.setheading(0)
+
+
+
+
+
 
 
 
