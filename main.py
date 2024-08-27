@@ -35,6 +35,7 @@ def main()-> None:
             score_board.increase_score()
         if snake.head.xcor() >285 or snake.head.xcor() < -285 or snake.head.ycor() > 285 or snake.head.ycor() < -285:
             game_is_on = False
+            score_board.game_over()
 
 
     screen.exitonclick()
