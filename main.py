@@ -11,6 +11,7 @@ def main()-> None:
     screen.bgcolor("black")
     screen.title("Snake Game")
     screen.tracer(0)
+   
 
     segments =build_snake().copy()
     while game_is_on:
@@ -23,7 +24,7 @@ def main()-> None:
         segments[0].forward(20)
 
 
-    screen.exitonclick()
+screen.exitonclick()
 
 
 if __name__ =="__main__":
